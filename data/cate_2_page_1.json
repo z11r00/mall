@@ -1,0 +1,36 @@
+[
+  {
+    "id": 1,
+    "cate_id": 2,
+    "cate_name": "源码",
+    "cate_url": "/2mine/resource_mall/list?cate_id=2",
+    "cover": "https://img.dkewl.com/202407/6aecf90610.jpg",
+    "title": "Telegram统计机器人源码/TG记账群发机器源码人/TG自动记账全开源版本",
+    "desc": "能群发，能统计账单，能记账，telegram机器人，使用方便。全网都是这套源码",
+    "keyword": "telegram统计机器人源码,TG记账群发机器源码人,TG自动记账全开源版本",
+    "content": "能群发，能统计账单，能记账，telegram机器人，使用方便。全网都是这套源码",
+    "imgs": "https://img.dkewl.com/202407/6aecf90610.jpg,https://img.dkewl.com/202407/6aecf90874.jpg",
+    "price": 0,
+    "pan_list": "https://pan.baidu.com",
+    "pay_url": "",
+    "sort": 11,
+    "update_time": "2024-07-06 14:10:15"
+  },
+  {
+    "id": 2,
+    "cate_id": 2,
+    "cate_name": "源码",
+    "cate_url": "/2mine/resource_mall/list?cate_id=2",
+    "cover": "https://img.dkewl.com/202407/5beac29537.png",
+    "title": "WordPress开发进群V2主题源码，多种引流方法，引私域二次变现",
+    "desc": "WordPress开发进群V2主题源码，多种引流方法，引私域二次变现",
+    "keyword": "进群主题源码,付费进群系统",
+    "content": "全新前端UI界面，多种前端交互特效让页面不再单调，进群页面群成员数，群成员头像名称，每次刷新页面随机更新不重复，最下面评论和点赞也是如此随机刷新不重复进群页面简介，群聊名称，群内展示，常见问题后台一键开关方便控制，付费进群系统后台自定义你的内容，底部显示你所设置的进群金额，也可以修改付费获取某些资源，搭建者自己集思广益，搭建的知识工具里面的内容才是内核",
+    "imgs": "https://img.dkewl.com/202407/5beac29537.png",
+    "price": 0,
+    "pan_list": "",
+    "pay_url": "",
+    "sort": 9,
+    "update_time": "2024-07-05 17:12:15"
+  }
+]

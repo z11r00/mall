@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:mobile="http://www.baidu.com/schemas/sitemap-mobile/1/">
+
+<url>
+<mobile:mobile type="pc,mobile"/>
+<loc>https://www.dkewl.com</loc>
+<priority>1.00</priority>
+<lastmod>2024-05-07</lastmod>
+<changefreq>Always</changefreq>
+</url>
+<url>
+<mobile:mobile type="pc,mobile"/>
+<loc>https://www.dkewl.com/code/</loc>
+<priority>0.90</priority>
+<lastmod>2024-05-07</lastmod>
+<changefreq>Always</changefreq>
+</url>
+</urlset>
