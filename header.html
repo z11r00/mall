@@ -1,0 +1,105 @@
+<div class="layui-header">
+    <div class="page-wb page-header">
+        <div class="logo page-left"><a href="/">ZERO开发资源网 - 免费PHP网站源码模板,插件软件资源分享平台！</a></div>
+        <div class="sp_nav"><span></span> <span></span> <span></span></div>
+
+        <ul class="layui-nav page-left">
+            <!--<li class="layui-nav-item layui-this">-->
+                <!--<a href="/">首页</a>-->
+            <!--</li>-->
+            <!--<li class="layui-nav-item ">-->
+                <!--<a href="/code/">网站源码</a>-->
+            <!--</li>-->
+            <!--<li class="layui-nav-item ">-->
+                <!--<a href="/plugin/">插件模块</a>-->
+            <!--</li>-->
+            <!--<li class="layui-nav-item ">-->
+                <!--<a href="/down/">软件工具</a>-->
+            <!--</li>-->
+            <!--<li class="layui-nav-item ">-->
+                <!--<a href="/media/">视频教程</a>-->
+            <!--</li>-->
+            <!--<li class="layui-nav-item ">-->
+                <!--<a href="/photo/">高清壁纸</a>-->
+            <!--</li>-->
+
+            <li class="layui-nav-item ">
+                <a href="http://www.zerofc.cn/" target="_blank">独立博客</a>
+            </li>
+        </ul>
+
+    </div>
+</div>
+
+<script>
+    var winUrl = location.search;
+    var cateUrl = "data/cate_list.json";
+    var statistUrl = "data/statist.json";
+
+    if (winUrl) {
+        var cateUrl = "../data/cate_list.json";
+        var statistUrl = "../data/statist.json";
+    }
+
+    // 获取分类
+    getNavList(cateUrl);
+    // 获取统计数据
+    getStatist(statistUrl);
+
+    function getNavList(cateUrl)
+    {
+        var data = {};
+
+        $.ajax({
+            url: cateUrl,
+            type: 'GET',
+            dataType: 'json',
+            data: JSON.stringify(data),
+            contentType: 'json/application',
+            success: function (res) {
+                // 全局存储分类列表
+                localStorage.setItem("cate_list", JSON.stringify(res));
+
+                var html = "";
+                for (var i=0; i<res.length; i++) {
+                    var activateClass = "";
+                    var targetUrl = res[i]['url'];
+                    var cateName = res[i]['cate_name'];
+                    if (res[i]['is_top'] == 1) {
+                        activateClass = "layui-this";
+                    } else {
+                        targetUrl = res[i]['url'] + "?cate_id=" + res[i]['id'];
+                    }
+                    html += '<li class="layui-nav-item '+activateClass+'"><a href="'+targetUrl+'">'+cateName+'</a> </li>';
+                }
+
+                $(".layui-nav").prepend(html);
+            },
+            error: function (res) {
+                console.log('获取导航栏数据失败~');
+                return;
+            }
+        });
+    }
+
+    function getStatist(statistUrl)
+    {
+        var data = {};
+
+        $.ajax({
+            url: statistUrl,
+            type: 'GET',
+            dataType: 'json',
+            data: JSON.stringify(data),
+            contentType: 'json/application',
+            success: function (res) {
+                // 全局存储统计数据
+                localStorage.setItem("statist_data", JSON.stringify(res));
+            },
+            error: function (res) {
+                console.log('获取统计数据失败~');
+                return;
+            }
+        });
+    }
+</script>
