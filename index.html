@@ -217,7 +217,7 @@
         <a href="https://www.zerofc.cn" target="_blank">ZERO开发独立博客</a>
         <a href="https://www.zerofc.cn/game" target="_blank">小北游戏平台</a>
         <a href="https://www.zerofc.cn/webstack/" target="_blank">小北导航</a>
-        <a href="/page/score/" target="_blank">友链申请+</a>
+        <a href="https://www.zerofc.cn/link/" target="_blank">友链申请+</a>
     </div>
 </div>
 
@@ -237,11 +237,11 @@
         <div class="page-right">
             <ul class="footerUl">
                 <li>
-                    <a href="/">ZERO开发独立博客</a>&nbsp;｜&nbsp;
+                    <a href="https://www.zerofc.cn/">ZERO开发独立博客</a>&nbsp;｜&nbsp;
                     <!--<a href="/page/score">友链申请</a>&nbsp;｜&nbsp;-->
-                    <a href="/page/ad">广告合作</a>&nbsp;｜&nbsp;
+                    <a href="https://www.zerofc.cn/about/">广告合作</a>&nbsp;｜&nbsp;
                     <!--<a href="/page/copyright">免责声明</a>&nbsp;｜&nbsp;-->
-                    <a href="/page/contact">联系我们</a>&nbsp;｜&nbsp;
+                    <a href="https://www.zerofc.cn/about/">联系我们</a>&nbsp;｜&nbsp;
                     <a href="/sitemap.xml" target="_blank">网站地图</a>
                 </li>
 
@@ -278,10 +278,36 @@
         contentType: 'json/application',
         success: function (res) {
 
-            console.log(res);
+            var cateNamesOnly = [];
+            var itemsWrapped = [];
 
+            for (var i = 0; i < res.length; i++) {
+                var item = res[i];
+                var cate = {
+                    "cate_id": item.cate_id,
+                    "cate_name": item.cate_name
+                };
+                cateNamesOnly.push(cate);
 
+                var wrappedItem = [res[i]]; // 注意这里将每个对象放在一个新数组中
+                itemsWrapped.push(wrappedItem);
+            }
 
+            console.log(cateNamesOnly);
+            console.log(itemsWrapped);
+
+//            // 初始化新对象
+//            var result = {};
+//            for (var i = 0; i < res.length; i++) {
+//                var item = res[i];
+//                var cateId = item['cate_id'];
+//                // 如果新对象中还没有这个cate_id的键，则初始化该键为一个空数组
+//                if (!result[cateId]) {
+//                    result[cateId] = [];
+//                }
+//                // 将当前对象添加到对应cate_id的数组中
+//                result[cateId].push(item);
+//            }
         },
         error: function (res) {
             console.log('获取统计数据失败~');
