@@ -7,4 +7,5 @@ public/
 .git/
 .github/
 .vs/
+.idea/
 _multiconfig.yml
