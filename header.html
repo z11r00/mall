@@ -1,6 +1,6 @@
 <div class="layui-header">
     <div class="page-wb page-header">
-        <div class="logo page-left"><a href="/">ZERO开发资源网 - 免费PHP网站源码模板,插件软件资源分享平台！</a></div>
+        <div class="logo page-left"><a href="javascript:;">ZERO开发资源网 - 免费PHP网站源码模板,插件软件资源分享平台！</a></div>
         <div class="sp_nav"><span></span> <span></span> <span></span></div>
 
         <ul class="layui-nav page-left">
@@ -32,7 +32,18 @@
 </div>
 
 <script>
+    // 读取URL中参数
+    function getQueryParam(name, search) {
+        name = name.replace(/[\[\]]/g, "\\$&"); // 正则处理，处理参数名包含方括号的情况
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(search);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
     var winUrl = location.search;
+    var cateId = getQueryParam("cate_id", winUrl);
     var cateUrl = "data/cate_list.json";
     var statistUrl = "data/statist.json";
 
@@ -65,11 +76,20 @@
                     var activateClass = "";
                     var targetUrl = res[i]['url'];
                     var cateName = res[i]['cate_name'];
-                    if (res[i]['is_top'] == 1) {
-                        activateClass = "layui-this";
-                    } else {
-                        targetUrl = res[i]['url'] + "?cate_id=" + res[i]['id'];
+                    var itemId = res[i]['id'];
+
+                    if (res[i]['is_top'] != 1) {
+                        targetUrl = res[i]['url'] + "?cate_id=" + itemId;
                     }
+
+                    if (cateId == itemId) {
+                        activateClass = "layui-this";
+                    }else {
+                        if (!cateId && res[i]['is_top'] == 1) {
+                            activateClass = "layui-this";
+                        }
+                    }
+
                     html += '<li class="layui-nav-item '+activateClass+'"><a href="'+targetUrl+'">'+cateName+'</a> </li>';
                 }
 

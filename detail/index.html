@@ -77,7 +77,8 @@
                         <!--<a class="page-left layui-btn layui-btn-big down" target="_blank" rel="nofollow" href="http://www.zerofc.cn/">-->
                             <!--<i class="iz iz-down"></i> 云端下载-->
                         <!--</a>-->
-                        <a class="page-right layui-btn layui-btn-small layui-icon" id="dashang" href="https://www.zerofc.cn/about/" target="_blank">打赏</a>
+                        <!--<a class="page-right layui-btn layui-btn-small layui-icon" id="dashang" href="https://www.zerofc.cn/about/" target="_blank">打赏</a>-->
+                        <a class="page-right layui-btn layui-btn-small layui-icon" href="javascript:dashang();">打赏</a>
                     </div>
                 </div>
             </div>
@@ -148,8 +149,16 @@
             </h2>
             <ul>
                 <li>
+                    <span>07-08</span>
+                    <a href="https://oscimg.oschina.net/oscnet/up-d8dbe919b0ecb354f207e8e6216f1dc23a5.jpg" title="有用工具盒" class="layui-elip" target="_blank">有用工具盒</a>
+                </li>
+                <li>
                     <span>05-08</span>
-                    <a href="/code/detail2709.html" title="4链提币接口通道源码" class="layui-elip">4链提币接口通道源码</a>
+                    <a href="https://space.bilibili.com/286666708/" title="北桥苏视频" class="layui-elip" target="_blank">北桥苏视频</a>
+                </li>
+                <li>
+                    <span>05-01</span>
+                    <a href="https://www.zerofc.cn/webstack/" title="编程导航栏" class="layui-elip" target="_blank">编程导航栏</a>
                 </li>
             </ul>
         </div>
@@ -201,8 +210,8 @@
     <div class="page-wb layui-clear">
         <div class="page-left layui-mt5">
             <div class="subLogo layui-clear">
-                <a href="/">
-                    <img src="../statics/skin/images/logo.png" height="18" class="page-left"/>
+                <a href="javascript:;">
+                    <img src="../statics/skin/images/logo.png" height="40" class="page-left"/>
                 </a>
                 <h2>一个专业的资源互联网分享平台</h2>
             </div>
@@ -362,8 +371,6 @@
     $('.btn').prepend(btnHtml);
 
 //console.log(detailArr['title']);
-
-
 </script>
 
 <!--统计_end-->
@@ -377,6 +384,21 @@
     })();
 </script>
 <!--统计_Over-->
+
+<script>
+    // 打赏按钮
+    function dashang() {
+        layui.use('layer',function(){
+            var layer=layui.layer;
+            layer.open({
+                type:2,
+                title:'打赏后，榜单展示有一些延时~',
+                area:['300px','600px'],
+                content: "../reward.html"
+            })
+        })
+    }
+</script>
 
 <script>
     layui.use('layer', function () {

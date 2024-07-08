@@ -87,22 +87,17 @@
         </div>
     </div>
     <ul class="layui-tab-title"></ul>
-
 </div>
 
 <div class="layui-tab layui-tab-brief layui-index page-wb">
     <h2>最新发布</h2>
 
-    <ul class="layui-tab-title">
+    <ul class="layui-tab-title" id="last-publish">
         <li class="layui-this">网站源码</li>
         <li>插件模块</li>
-        <li>软件工具</li>
-        <li>视频教程</li>
-        <li>综合资源</li>
     </ul>
 
     <div class="layui-tab-content">
-
         <div class="layui-tab-item layui-show">
             <ul class="fly-case-list layui-main">
 
@@ -118,9 +113,8 @@
                         全开源免授权版本此版本没有任何授权我已经去除授权，随意二开无任何加密。更新日志1.修复不能下载2.修复不能更新3.修复不能删除用户4.修复不能删除授权5.增加代理后台管理6.重写授权读取文件7.修复已经知道漏洞图片：
                     </p>
                     <div class="fly-case-info">
-                        <p class="layui-elip">
-                            <span style="color:#666;">2024-07-04</span>
-                            <i class="iz iz-chakan"></i> 999+ &nbsp;<i class="iz iz-pinglun"></i>
+                        <p class="layui-elip" style="color: red;font-weight: bold;font-size: 17px;padding-left: 2px;">
+                            ￥56
                         </p>
                     </div>
                 </li>
@@ -145,68 +139,6 @@
                 </li>
             </ul>
         </div>
-        <div class="layui-tab-item ">
-            <ul class="fly-case-list layui-main">
-
-                <li>
-                    <a class="fly-case-img" href="/down/detail371.html" target="_blank"><img
-                            lay-src="https://img.dkewl.com/202311/7e41a15240.png" alt="微信公众号采集工具源码 微信公众号文章批量下载工具源码"><i
-                            class="iz iz-search"></i></a>
-                    <h2 class="layui-elip"><a href="/down/detail371.html" target="_blank">微信公众号采集工具源码
-                        微信公众号文章批量下载工具源码</a></h2>
-                    <p class="fly-case-desc">简介：微信公众号采集工具源码
-                        微信公众号文章批量下载工具源码软件为绿色版，无需安装，解压后双击即可使用。软件支持将文章保存为HTML文件或者MD格式的文件，WORD和PDF格式。软件支持单篇下载和批量下载，可以仅仅保存某一篇指定的文章，也可以将某个公众号的文章全部保存下来。
-                        图片：</p>
-                    <div class="fly-case-info">
-                        <p class="layui-elip">
-                            <span style="color:#666;">2023-11-20</span>
-                            <i class="iz iz-chakan"></i> 999+ &nbsp;<i class="iz iz-pinglun"></i>
-                        </p>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="layui-tab-item ">
-            <ul class="fly-case-list layui-main">
-
-                <li>
-                    <a class="fly-case-img" href="/media/detail37.html" target="_blank"><img
-                            lay-src="https://img.dkewl.com/202105/caa0c8e877.png" alt="2021电影混剪快速赚钱技术篇"><i
-                            class="iz iz-search"></i></a>
-                    <h2 class="layui-elip"><a href="/media/detail37.html" target="_blank">2021电影混剪快速赚钱技术篇</a></h2>
-                    <p class="fly-case-desc">网盘提取码:
-                        ascf现在很多人都在操作抖音影视混剪，本课程为技术篇！电影混剪不缺素材，全天下电影素材多，投入少，一台电脑一部手机即可，低成本高效制作。</p>
-                    <div class="fly-case-info">
-                        <p class="layui-elip">
-                            <span style="color:#666;">2021-05-13</span>
-                            <i class="iz iz-chakan"></i> 999+ &nbsp;<i class="iz iz-pinglun"></i>
-                        </p>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="layui-tab-item ">
-            <ul class="fly-case-list layui-main">
-
-                <li>
-                    <a class="fly-case-img" href="/course/detail17570.html" target="_blank"><img
-                            lay-src="https://img.dkewl.com/202406/5f1a93bc59.png" alt="Swoole_loader扩展文件下载"><i
-                            class="iz iz-search"></i></a>
-                    <h2 class="layui-elip"><a href="/course/detail17570.html" target="_blank">Swoole_loader扩展文件下载</a>
-                    </h2>
-                    <p class="fly-case-desc">简介：Swoole_loader全套PHP扩展文件下载 包含PHP5.4 -
-                        PHP8.1所有版本下载地址：https://www.skpan.cn/lShJe6TwSyQ</p>
-                    <div class="fly-case-info">
-                        <p class="layui-elip">
-                            <span style="color:#666;">2024-06-19</span>
-                            <i class="iz iz-chakan"></i> 999+ &nbsp;<i class="iz iz-pinglun"></i>
-                        </p>
-                    </div>
-                </li>
-
-            </ul>
-        </div>
-
     </div>
 
 </div>
@@ -277,37 +209,82 @@
         data: JSON.stringify(data),
         contentType: 'json/application',
         success: function (res) {
-
-            var cateNamesOnly = [];
-            var itemsWrapped = [];
-
-            for (var i = 0; i < res.length; i++) {
-                var item = res[i];
-                var cate = {
-                    "cate_id": item.cate_id,
-                    "cate_name": item.cate_name
-                };
-                cateNamesOnly.push(cate);
-
-                var wrappedItem = [res[i]]; // 注意这里将每个对象放在一个新数组中
-                itemsWrapped.push(wrappedItem);
-            }
-
-            console.log(cateNamesOnly);
-            console.log(itemsWrapped);
-
-//            // 初始化新对象
-//            var result = {};
+//            var cateNamesOnly = [];
+//            var itemsWrapped = [];
 //            for (var i = 0; i < res.length; i++) {
 //                var item = res[i];
-//                var cateId = item['cate_id'];
-//                // 如果新对象中还没有这个cate_id的键，则初始化该键为一个空数组
-//                if (!result[cateId]) {
-//                    result[cateId] = [];
-//                }
-//                // 将当前对象添加到对应cate_id的数组中
-//                result[cateId].push(item);
+//                var cate = {
+//                    "cate_id": item.cate_id,
+//                    "cate_name": item.cate_name
+//                };
+//                cateNamesOnly.push(cate);
+//                var wrappedItem = [res[i]]; // 注意这里将每个对象放在一个新数组中
+//                itemsWrapped.push(wrappedItem);
 //            }
+//            console.log(cateNamesOnly);
+//            console.log(itemsWrapped);
+
+            // 初始化新对象
+            var result = {};
+            // 最新发布导航切换栏
+            var tabTitleHtml = "";
+            for (var i = 0; i < res.length; i++) {
+                var item = res[i];
+
+                // 添加文章的详情信息到localStorage
+                localStorage.setItem("detail_"+item['id'], JSON.stringify(item));
+
+                var cateId = item['cate_id'];
+                var cateName = item['cate_name'];
+                var _thisActivate = "";
+                // 如果新对象中还没有这个cate_id的键，则初始化该键为一个空数组
+                if (!result[cateId]) {
+                    result[cateId] = [];
+                    if (tabTitleHtml == "") _thisActivate = "class='layui-this'";
+                    tabTitleHtml += '<li '+_thisActivate+'>'+cateName+'</li>';
+                }
+                // 将当前对象添加到对应cate_id的数组中
+                result[cateId].push(item);
+            }
+
+            $('#last-publish').html('').html(tabTitleHtml);
+
+            // 开始循环遍历最新发布内容
+            var publishContentHtml = "";
+            for (item in result) {
+                var productHtml = "";
+                for (var pro=0;pro<result[item].length;pro++) {
+                    var priceTxt = "免费";
+                    if (result[item][pro]['price'] > 0) priceTxt = "￥ "+result[item][pro]['price'];
+
+                    productHtml += '<li>'+
+                                        '<a class="fly-case-img" href="'+result[item][pro]['detail_url']+'" target="_blank">'+
+                                            '<img src="'+result[item][pro]['cover']+'" alt="'+result[item][pro]['title']+'">'+
+                                            '<i class="iz iz-search"></i>'+
+                                        '</a>'+
+                                        '<h2 class="layui-elip">'+
+                                            '<a href="'+result[item][pro]['detail_url']+'" target="_blank">'+result[item][pro]['title']+'</a>'+
+                                        '</h2>'+
+                                        '<p class="fly-case-desc">'+result[item][pro]['desc']+'</p>'+
+                                        '<div class="fly-case-info">'+
+                                            '<p class="layui-elip" style="color: red;font-weight: bold;font-size: 17px;padding-left: 2px;">'+
+                                                priceTxt+
+                                            '</p>'+
+                                        '</div>'+
+                                    '</li>';
+                }
+
+                var _thisShowActivate = "";
+                if (publishContentHtml == "") _thisShowActivate = "layui-show";
+
+                publishContentHtml += '<div class="layui-tab-item '+_thisShowActivate+'">'+
+                                            '<ul class="fly-case-list layui-main">'+
+                                                productHtml+
+                                            '</ul>'+
+                                    '</div>';
+            }
+
+            $('.layui-tab-content').html('').html(publishContentHtml);
         },
         error: function (res) {
             console.log('获取统计数据失败~');
@@ -315,6 +292,23 @@
         }
     });
 
+    // 填充站点统计数据
+    var statistData = localStorage.getItem("statist_data");
+    var statistObj = {};
+    if (statistData) {
+        statistObj = JSON.parse(statistData);
+        var lastUpdateCount = 0;
+        var totalCount = 112;
+        var downloadCount = 49;
+        var runDurtion = daysBetweenDates(getCurrentDate(), "2018-09-25");
+
+        var statistHtml = '<cite>今日更新：<i>'+lastUpdateCount+'</i>个</cite>'+
+                          '<cite>全部资源：<i>'+totalCount+'</i>个</cite>'+
+                          '<cite>下载量：<i>'+downloadCount+'</i>次</cite>'+
+                          '<cite>本站运行：<i>'+runDurtion+'</i>天</cite>';
+
+        $('.layui-anim-scaleSpring').html('').html(statistHtml);
+    }
 
     // 获取运行时长
     function daysBetweenDates(dateString1, dateString2) {
@@ -339,8 +333,6 @@
 
         return `${year}-${month}-${day}`; // 拼接成"YYYY-MM-DD"格式
     }
-
-//    alert(daysBetweenDates("2021-09-15", getCurrentDate()));
 </script>
 
 <!--统计_end-->
@@ -360,7 +352,6 @@
 //function loadScript(url, callback) {
 //    var script = document.createElement("script");
 //    script.type = "text/javascript";
-//
 //    // 当脚本加载完成时执行的函数
 //    script.onload = script.onreadystatechange = function() {
 //        if (!script.readyState || script.readyState === "loaded" || script.readyState === "complete") {
@@ -372,19 +363,16 @@
 //            }
 //        }
 //    };
-//
 //    // 如果脚本加载失败
 //    script.onerror = function() {
 //        // 处理加载失败的情况
 //        console.error('Script loaded error for URL:', url);
 //    };
-//
 //    // 设置脚本的src属性
 //    script.src = url;
 //    // 将script标签添加到head中
 //    document.getElementsByTagName("head")[0].appendChild(script);
 //}
-//
 //// 读取url的参数, search = window.location.search
 //function getQueryParam(name, search) {
 //    name = name.replace(/[\[\]]/g, "\\$&"); // 正则处理，处理参数名包含方括号的情况
@@ -394,7 +382,6 @@
 //    if (!results[2]) return '';
 //    return decodeURIComponent(results[2].replace(/\+/g, " "));
 //}
-//
 //// 实现的目的，通过不同的ID访问不同的文件
 //var cate = getQueryParam('cate', location.search);
 //// 使用函数

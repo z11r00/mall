@@ -73,7 +73,7 @@ $(function(){
 				// 	,btn: ['点击联系站长']
 					,btnAlign: 'c'
 					,moveType: 1 //拖拽模式，0或者1
-					,content: '<div style="padding: 50px 20px; line-height: 22px; background-color: #393D49; color: #fff;"><div style="text-align: center;padding-bottom: 20px;">有问题咨询可以在“公众号”上找到我</div><img src='+winUrl+' width="260px"/><br></div>'
+					,content: '<div style="padding: 50px 20px; line-height: 22px; background-color: #393D49; color: #fff;"><div style="text-align: center;padding-bottom: 20px;">有问题咨询可以在“公众号”上找到我</div><img src='+gzhQrcode+' width="260px"/><br></div>'
 					,success: function(layero){
 						var btn = layero.find('.layui-layer-btn');
 						btn.find('.layui-layer-btn0').attr({
