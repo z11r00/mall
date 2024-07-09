@@ -198,9 +198,14 @@
                     var priceTxt = "免费";
                     var goodsUrl = pathName+"detail?id="+res[i]['id'];
                     if (res[i]['price'] > 0) priceTxt = "￥ "+res[i]['price'];
+
+                    // 图片地址处理
+                    var coverUrl = res[i]['cover'];
+                    if (coverUrl.indexOf("http") == -1) coverUrl = "../"+coverUrl;
+
                     goodsHtml += '<li>'+
                                 '<a class="fly-case-img" href="'+goodsUrl+'">'+
-                                    '<img src="'+res[i]['cover']+'" alt="'+res[i]['title']+'">'+
+                                    '<img src="'+coverUrl+'" alt="'+res[i]['title']+'">'+
                                     '<i class="iz iz-search"></i>'+
                                 '</a>'+
                                 '<h2 class="layui-elip">'+

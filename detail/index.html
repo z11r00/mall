@@ -289,8 +289,10 @@
     // 标题
     $('.show-title').find('span').text("").text(detailArr['title']);
     // 封面
-    $('.down-img').attr('layer-src', detailArr['cover']);
-    $('.down-img').attr('src', detailArr['cover']);
+    var detailCover = detailArr['cover'];
+    if (detailCover.indexOf("http") == -1) detailCover = "../"+detailCover;
+    $('.down-img').attr('layer-src', detailCover);
+    $('.down-img').attr('src', detailCover);
     // 金额
     var price = detailArr['price'];
     if (price > 0) $('.price').find('em').text('￥ '+ price);
@@ -314,7 +316,9 @@
         var imgArr = imgsList.split(",");
         var imgHtml = "";
         for (var j=0;j<imgArr.length;j++) {
-            imgHtml += '<img title="1" class="aligncenter size-full wp-image-19849" src="'+imgArr[j]+'"/>';
+            var detailImg = imgArr[j];
+            if (detailImg.indexOf("http") == -1) detailImg = "../"+detailImg;
+            imgHtml += '<img title="1" class="aligncenter size-full wp-image-19849" src="'+detailImg+'"/>';
         }
         $('.resource-imgs').prepend(imgHtml);
     }
