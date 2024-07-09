@@ -1,13 +1,13 @@
 [
   {
     "id": 1,
-    "url": "/mall",
+    "url": "/2mine/resource_mall",
     "cate_name": "首页",
     "is_top": 1
   },
   {
     "id": 2,
-    "url": "/mall/list",
+    "url": "/2mine/resource_mall/list",
     "cate_name": "源码",
     "is_top": 0
   }
