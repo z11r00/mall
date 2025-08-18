@@ -1,8 +1,9 @@
 {
-  "host": "/mall/",
-  "page_size": 1,
-  "download_count": 201,
-  "last_update_count": 5,
-  "total_count": 153,
-  "cate_2_count": 2
+    "host": "/mall/",
+    "page_size": 24,
+    "download_count": 125,
+    "last_update_count": 1,
+    "total_count": 328,
+    "cate_2_count": 103,
+    "cate_3_count": 225
 }
